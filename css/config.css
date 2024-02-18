@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .card{
+        @apply cursor-pointer flex flex-col w-full h-full max-w-[350px] max-h-[400px] shadow-xl;
+    }
+    .card-container-img{
+        @apply w-[350px] h-[200px] overflow-hidden;
+    }
+    .card-img{
+        @apply w-full h-full object-cover rounded-t-lg;
+    }
+    .card-info{
+        @apply w-full h-[200px] rounded-b-lg px-4 py-4 flex flex-col justify-center;
+    }
+    .card-info-title{
+        @apply font-semibold text-xl pb-3;
+    }
+    .card-info-text{
+        @apply flex justify-start gap-1;
+    }
+    .country-list{
+        @apply flex flex-wrap mx-auto gap-8;
+    }
+    .country{
+        @apply w-fit;
+    }
+}
