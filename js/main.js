@@ -3,6 +3,7 @@ const TOGGLE_MENU = document.querySelector("#toggle-menu");
 const OPTIONS_MENU = document.querySelector("#options-menu");
 const MAIN_CONTAINER = document.querySelector("#main-container");
 const SEARCH_BAR = document.querySelector("#search");
+const DARK_MODE_BTN = document.querySelector(".dark-mode-btn");
 
 async function fetchedData() {
     const url = "./data.json";
@@ -33,6 +34,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             renderCountries(result);
         })
     });
+    DARK_MODE_BTN.addEventListener("click", ()=>{
+        applyDarkMode();
+    })
 });
 
 function filterByName(countries,searchTerm){
@@ -59,7 +63,7 @@ function renderCountries(COUNTRIES) {
             <div class="card-container-img">
                 <img class="card-img" src="${country.flags.svg}" alt="${country.name} flag">
             </div>
-            <article class="card-info">
+            <article class="card-info dark-mode-secondary">
                 <h2 class="card-info-title">${country.name}</h2>
                 <div class="card-info-text"><h4 class="font-semibold">Population: </h4><p>${fixedNumber}</p></div>
                 <div class="card-info-text"><h4 class="font-semibold">Region: </h4><p>${country.region}</p></div>
@@ -81,3 +85,13 @@ TOGGLE_MENU.addEventListener('click', () => {
     TOGGLE_MENU.classList.toggle('rotate');
 });
 
+function applyDarkMode(){
+    const DARK_MODE_SECONDARY = document.querySelectorAll(".dark-mode-secondary");
+    const DARK_MODE_MAIN = document.querySelector(".dark-mode-main");
+    DARK_MODE_SECONDARY.forEach(element => {
+        element.classList.toggle("dark-mode-secondary-inactive");
+        element.classList.toggle('dark-mode-secondary-active');
+    })
+    DARK_MODE_MAIN.classList.toggle("dark-mode-main-inactive");
+    DARK_MODE_MAIN.classList.toggle("dark-mode-main-active");
+}

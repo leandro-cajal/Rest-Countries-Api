@@ -13,7 +13,7 @@
         @apply w-full h-full object-cover rounded-t-lg;
     }
     .card-info{
-        @apply w-full h-[200px] rounded-b-lg px-4 py-4 flex flex-col justify-center bg-gray-800;
+        @apply w-full h-[200px] rounded-b-lg px-4 py-4 flex flex-col justify-center bg-white;
     }
     .card-info-title{
         @apply font-semibold text-xl pb-3;
@@ -33,5 +33,17 @@
     
     #toggle-menu.rotate {
         transform: rotate(180deg);
+    }
+    .dark-mode-main-inactive{
+        @apply bg-gray-200 text-gray-900
+    }
+    .dark-mode-main-active{
+        @apply bg-gray-900 text-gray-200;
+    }
+    .dark-mode-secondary-inactive{
+        @apply bg-white;
+    }
+    .dark-mode-secondary-active{
+        @apply bg-gray-800;
     }
 }
