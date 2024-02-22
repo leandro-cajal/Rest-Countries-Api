@@ -9,17 +9,27 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body class="font-sans dark-mode-main dark-mode-main-inactive">
+<body class=" font-sans dark-mode-main dark-mode-main-inactive">
     <div class="w-full shadow-lg dark-mode-secondary dark-mode-secondary-inactive">
         <header class="px-3 py-6 md:p-6 max-w-7xl mx-auto flex justify-between items-center">
-            <h1 class="font-bold md:text-xl ">Where in the world?</h1>
+            <a href="./index.html">
+                <h1 class="font-bold md:text-xl ">Where in the world?</h1>
+            </a>
             <div class="cursor-pointer dark-mode-btn">
-                <i class="bi bi-moon"></i>
-                <span class="dark-mode font-semibold">Dark Mode</span>
+                <div class="dark-mode-switch relative">
+                    <input type="checkbox" id="dark-mode-toggle" class="hidden dark-mode-toggle">
+                    <label for="dark-mode-toggle" class="dark-mode-label flex items-center cursor-pointer">
+                      <span class="sr-only">Toggle Dark Mode</span>
+                      <span class="w-8 h-4 lg:w-10 lg:h-5 bg-gray-400 rounded-full relative">
+                        <span class="dot absolute w-4 h-4 lg:w-5 lg:h-5 dark-mode-secondary dark-mode-secondary-active rounded-full transition-transform duration-300 transform"></span>
+                      </span>
+                      <span class="ml-3 dark-mode-text">Dark Mode</span>
+                    </label>
+                  </div>
             </div>
         </header>
     </div>
-    <main class="dark-mode-main">
+    <main id="main" class="">
         <div class="w-full">
             <section class="max-w-7xl mx-auto pt-10">
                 <form action="" class=" flex px-6 xl:px-0 justify-center sm:justify-between flex-wrap items-center space-y-4">
@@ -27,11 +37,11 @@
                         <div class="cursor-pointer"><i class="bi bi-search"></i></div>
                         <input class=" outline-none bg-transparent font-semibold" name="search" id="search" placeholder="Search for a country ...">
                     </div>
-                    <div class="relative p-4 flex gap-6 dark-mode-secondary dark-mode-secondary-inactive shadow-md rounded-md mt-0">
-                        <label class="font-semibold" for="options">Filter by Region</label>
-                        <div class="flex gap-4 justify-center items-center">
-                            <div id="toggle-menu" class="cursor-pointer">
-                                <i id="arrow-icon" class="lg:text-xs bi bi-chevron-down"></i>
+                    <div id="toggle-menu" class="cursor-pointer relative p-4 flex gap-6 dark-mode-secondary dark-mode-secondary-inactive shadow-md rounded-md mt-0">
+                        <label class="font-semibold cursor-pointer" for="options">Filter by Region</label>
+                        <div  class="flex gap-4 justify-center items-center">
+                            <div id="arrow-icon" class="">
+                                <i class="lg:text-xs bi bi-chevron-down"></i>
                             </div>
                             <div id="options-menu" class="top-[60px] space-y-1 p-4 w-full left-0 hidden absolute dark-mode-secondary dark-mode-secondary-inactive rounded-md shadow-md">
                                 <div data-value="africa" class="option cursor-pointer hover:font-semibold transition-all">Africa</div>

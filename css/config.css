@@ -6,27 +6,39 @@
     .card{
         @apply cursor-pointer rounded-b-lg flex flex-col w-full h-full max-h-[400px] shadow-xl;
     }
+
     .card-container-img{
         @apply w-full h-[200px] overflow-hidden;
     }
+
     .card-img{
         @apply w-full h-full object-cover rounded-t-lg;
     }
+
     .card-info{
         @apply w-full h-[200px] rounded-b-lg px-4 py-4 flex flex-col justify-center bg-white;
     }
+
     .card-info-title{
         @apply font-semibold text-xl pb-3;
     }
+
     .card-info-text{
         @apply flex font-thin opacity-90 justify-start gap-1;
     }
+
     .country-list{
         @apply w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center gap-10;
     }
+
     .country{
         @apply w-full;
     }
+
+    .country-card-img-container{
+        @apply max-w-lg max-h-96;
+    }
+
     #toggle-menu {
         transition: transform 0.3s;
     }
@@ -34,16 +46,69 @@
     #toggle-menu.rotate {
         transform: rotate(180deg);
     }
+
     .dark-mode-main-inactive{
-        @apply bg-gray-200 text-gray-900
+        @apply bg-gray-100 text-gray-900
     }
+
     .dark-mode-main-active{
-        @apply bg-gray-900 text-gray-200;
+        @apply bg-gray-900 text-gray-100;
     }
+
     .dark-mode-secondary-inactive{
         @apply bg-white;
     }
+
     .dark-mode-secondary-active{
         @apply bg-gray-800;
     }
+
+    .details-container-wrapper{
+        @apply max-w-7xl mx-auto p-6 lg:px-0 space-y-4;
+    }
+
+    .country-card-details{
+        @apply flex space-x-6;
+    }
+
+    .country-details{
+        @apply flex flex-col gap-4;
+    }
+    
+    .back-btn{
+        @apply flex items-center space-x-2 rounded py-3 px-9 shadow-lg w-fit;
+    }
+
+    .country-card{
+        @apply space-y-8;
+    }
+
+    .country-card-info{
+        @apply flex flex-col lg:flex-row gap-6;
+    }
+
+    .border-container{
+        @apply flex gap-4;
+    }
+
+    .border-btn{
+        @apply p-6 rounded-md;
+    }
+
+    .dark-mode-switch .dot {
+        transform: translateX(0);
+      }
+    
+      .dark-mode-switch input[type="checkbox"]:checked + .dark-mode-label .dot {
+        transform: translateX(100%);
+      }
+    
+      /* Estilos para el interruptor de Dark Mode en modo oscuro */
+      .dark-mode-switch.dark-mode-label {
+        background-color: #1f2937; /* Ajusta el color de fondo del interruptor en modo oscuro según tu preferencia */
+      }
+    
+      .dark-mode-switch.dark-mode-label .dot {
+        background-color: #fff; /* Ajusta el color del punto del interruptor en modo oscuro según tu preferencia */
+      }
 }
