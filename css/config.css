@@ -24,7 +24,7 @@
     }
 
     .card-info-text{
-        @apply flex font-thin opacity-90 justify-start gap-1;
+        @apply flex opacity-90 justify-start gap-1;
     }
 
     .country-list{

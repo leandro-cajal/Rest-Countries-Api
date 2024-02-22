@@ -101,9 +101,9 @@ function renderCountryDetails(countryId, COUNTRIES) {
     DETAILS_CONTAINER.innerHTML = "";
     // Inserta los detalles del país en el cuerpo
     DETAILS_CONTAINER.innerHTML = `
-        <div id="return-btn" class ="flex items-center back-btn dark-mode-secondary ${darkModeClass}">
+        <a id="return-btn" href="./index.html" class ="flex items-center back-btn dark-mode-secondary ${darkModeClass}">
             <i class="bi bi-arrow-left"></i><button class="">Back</button>
-        </div>
+        </a>
         <div class="country-card-details">
             <div class="country-card-img-container">
                 <img class="w-full h-full object-cover" src="${country.flags.svg}" alt="${country.name} flag">
