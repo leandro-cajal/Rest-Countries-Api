@@ -578,6 +578,10 @@ video {
   }
 }
 
+#main{
+  min-height: 80dvh;
+}
+
 .card {
   display: flex;
   height: 100%;
@@ -643,6 +647,7 @@ video {
   grid-template-columns: repeat(1, minmax(0, 1fr));
   justify-content: center;
   gap: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 @media (min-width: 640px) {
@@ -664,14 +669,19 @@ video {
 .country-card-img-container {
   max-height: 24rem;
   max-width: 32rem;
+  overflow: hidden;
 }
 
 #toggle-menu {
   transition: transform 0.3s;
 }
 
-#toggle-menu.rotate {
-  transform: rotate(180deg);
+#arrow-icon {
+  transition: all 0.3s;
+}
+
+.rotated{
+  transform: rotate(180deg) !important;
 }
 
 .dark-mode-main-inactive {
@@ -714,7 +724,7 @@ video {
   padding: 1.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .details-container-wrapper {
     padding-left: 0px;
     padding-right: 0px;
@@ -723,18 +733,35 @@ video {
 
 .country-card-details {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
 }
 
-.country-card-details > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+@media (min-width: 1024px) {
+  .country-card-details {
+    flex-direction: row;
+  }
 }
 
 .country-details {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .country-details {
+    gap: 3rem;
+  }
+}
+
+.country-card-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
 }
 
 .back-btn {
@@ -752,8 +779,8 @@ video {
 
 .back-btn {
   border-radius: 0.25rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   padding-left: 2.25rem;
   padding-right: 2.25rem;
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -764,23 +791,51 @@ video {
 .country-card-info {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 @media (min-width: 1024px) {
   .country-card-info {
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 
-.border-container {
+.country-card-info div p:not(strong) {
+  font-weight: 100;
+  opacity: 0.95;
+}
+
+.country-card-info div strong {
+  font-weight: 600;
+}
+
+.country-card-inside {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.border-container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 
 .border-btn {
-  border-radius: 0.375rem;
-  padding: 1.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 0.125rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .dark-mode-switch .dot {
@@ -1633,6 +1688,14 @@ video {
   justify-items: stretch;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-4 {
   gap: 1rem;
 }
@@ -1651,6 +1714,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -2250,6 +2319,11 @@ video {
   padding-right: 1.5rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -2317,6 +2391,11 @@ video {
 
 .font-sans {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-bold {
@@ -2402,6 +2481,16 @@ video {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.text-sky-600 {
+  --tw-text-opacity: 1;
+  color: rgb(2 132 199 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2801,6 +2890,16 @@ video {
   font-weight: 600;
 }
 
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.hover\:text-sky-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(2 132 199 / var(--tw-text-opacity));
+}
+
 .before\:hover\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
@@ -2826,10 +2925,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
   .md\:p-6 {
     padding: 1.5rem;
   }

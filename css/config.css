@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+    #main{
+        min-height: 80dvh;
+    }
     .card{
         @apply cursor-pointer rounded-b-lg flex flex-col w-full h-full max-h-[400px] shadow-xl;
     }
@@ -28,7 +31,7 @@
     }
 
     .country-list{
-        @apply w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center gap-10;
+        @apply w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center gap-10 pb-10;
     }
 
     .country{
@@ -36,15 +39,18 @@
     }
 
     .country-card-img-container{
-        @apply max-w-lg max-h-96;
+        @apply max-w-lg max-h-96 overflow-hidden;
     }
 
     #toggle-menu {
         transition: transform 0.3s;
     }
     
-    #toggle-menu.rotate {
-        transform: rotate(180deg);
+    #arrow-icon {
+        transition: all 0.3s;
+    }
+    .rotated{
+        transform: rotate(180deg) !important;
     }
 
     .dark-mode-main-inactive{
@@ -64,19 +70,23 @@
     }
 
     .details-container-wrapper{
-        @apply max-w-7xl mx-auto p-6 lg:px-0 space-y-4;
+        @apply max-w-7xl mx-auto p-6 xl:px-0 space-y-4;
     }
 
     .country-card-details{
-        @apply flex space-x-6;
+        @apply flex flex-col justify-between items-center gap-12 lg:flex-row;
     }
 
     .country-details{
-        @apply flex flex-col gap-4;
+        @apply flex flex-col gap-8 lg:gap-12;
+    }
+
+    .country-card-title{
+        @apply text-3xl font-bold mb-6;
     }
     
     .back-btn{
-        @apply flex items-center space-x-2 rounded py-3 px-9 shadow-lg w-fit;
+        @apply flex items-center space-x-2 rounded py-2 px-9 shadow-lg w-fit;
     }
 
     .country-card{
@@ -84,15 +94,27 @@
     }
 
     .country-card-info{
-        @apply flex flex-col lg:flex-row gap-6;
+        @apply flex flex-col lg:flex-row lg:justify-between gap-8;
+    }
+
+    .country-card-info div p:not(strong){
+        @apply opacity-95 font-thin;
+    }
+
+    .country-card-info div strong{
+        @apply font-semibold;
+    }
+
+    .country-card-inside{
+        @apply flex flex-col justify-center gap-8;
     }
 
     .border-container{
-        @apply flex gap-4;
+        @apply flex gap-4 justify-center flex-wrap mt-6;
     }
 
     .border-btn{
-        @apply p-6 rounded-md;
+        @apply px-6 py-1 rounded-sm w-fit shadow-md;
     }
 
     .dark-mode-switch .dot {
