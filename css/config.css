@@ -98,7 +98,7 @@
     }
 
     .country-card-info div p:not(strong){
-        @apply opacity-95 font-thin;
+        @apply font-light;
     }
 
     .country-card-info div strong{
