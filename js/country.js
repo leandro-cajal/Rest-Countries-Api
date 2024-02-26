@@ -4,6 +4,7 @@ const params = query.get("name");
 
 // Obtener referencia al elemento del DOM
 const MAIN = document.querySelector("#main");
+const PAGE_TITLE = document.querySelector("#page-title");
 
 // Función asincrónica para obtener datos de una URL
 async function fetchedData() {
@@ -81,6 +82,9 @@ function renderCountryDetails(countryName, COUNTRIES) {
     // Agregar los detalles del país al documento  
     MAIN.appendChild(WRAPPER);
     WRAPPER.appendChild(DETAILS_CONTAINER);
+    PAGE_TITLE.innerHTML =`
+        ${country.name} - Where in the world?
+    `;
 }
 
 // Función para obtener los países vecinos del país actual

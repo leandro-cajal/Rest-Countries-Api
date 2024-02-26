@@ -7,7 +7,7 @@
         min-height: 80dvh;
     }
     .card{
-        @apply cursor-pointer rounded-b-lg flex flex-col w-full h-full max-h-[400px] shadow-xl;
+        @apply cursor-pointer rounded-b-lg flex flex-col w-full h-full shadow-xl;
     }
 
     .card-container-img{
@@ -31,11 +31,11 @@
     }
 
     .country-list{
-        @apply w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center gap-10 pb-10;
+        @apply w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center gap-10 pb-10 place-items-center;
     }
 
     .country{
-        @apply w-full;
+        @apply max-w-[290px] max-h-[400px];
     }
 
     .country-card-img-container{

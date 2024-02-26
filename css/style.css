@@ -585,7 +585,6 @@ video {
 .card {
   display: flex;
   height: 100%;
-  max-height: 400px;
   width: 100%;
   cursor: pointer;
   flex-direction: column;
@@ -645,6 +644,7 @@ video {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(1, minmax(0, 1fr));
+  place-items: center;
   justify-content: center;
   gap: 2.5rem;
   padding-bottom: 2.5rem;
@@ -663,7 +663,8 @@ video {
 }
 
 .country {
-  width: 100%;
+  max-height: 400px;
+  max-width: 290px;
 }
 
 .country-card-img-container {
@@ -2955,6 +2956,13 @@ video {
   .lg\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 

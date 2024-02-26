@@ -84,7 +84,7 @@ function renderCountries(COUNTRIES) {
         li.classList = "country";
         let fixedNumber = fixNumberPopulation(country.population);
         li.innerHTML = `
-        <a href="country.html?name=${country.name}" class="card" id="${country.id}"> <!-- Agrega el id del país como identificador -->
+        <a href="country.html?name=${country.name}" class="card">
             <div class="card-container-img">
                 <img class="card-img" src="${country.flags.svg}" alt="${country.name} flag">
             </div>
